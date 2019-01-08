@@ -1,0 +1,35 @@
+{{template "header"}}  
+    <title>Document</title>
+           
+    </head>
+
+    <body>
+    {{template "navbar"}}
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Project</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Timestamp</th>
+
+
+                </tr>
+            </thead>
+            {{range.}}
+            <tbody>
+              
+                    <td>{{.Project}}</td>
+                    <td>{{.Action}}</td>
+                    <td>{{.Task}}</td>
+                    <td>{{.User}}</td>
+                    <td>{{.Descr}}</td>
+                    <td>{{.Timestamp}}</td>
+              
+            </tbody>   
+            {{end}}   
+        </table>
+{{template "footer"}}

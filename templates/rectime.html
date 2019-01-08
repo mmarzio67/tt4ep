@@ -1,0 +1,46 @@
+{{template "header"}}
+        <title>Document</title>
+</head>
+
+<body>
+{{template "navbar"}}
+<div class='container'>
+  <div class='content'>
+    <h1>Time Tracker</h1>
+    <div class="lead">Registrazione ore:</div>
+
+    <form class="form form-inline" method="post" action="" enctype="multipart/form-data">
+                
+      <select name="action" class="form-control input-sm">
+        {{ range $key, $value := .A }}
+          <option value="{{ $value.id }}">{{ $value.name }}</option>
+        {{end}}
+          
+      </select>
+      
+      <select name="project" class="form-control input-sm">
+        {{ range $key, $value := .P }}
+          <option value="{{  $value.id }}">{{ $value.name }}</option>
+        {{end}}
+          
+      </select>
+    
+      <select name="task" class="form-control input-sm">
+        {{range $key, $value := .T }}
+          <option value="{{  $value.id }}">{{ $value.name }}</option>
+        {{end}}
+          
+      </select>
+
+      <input type="text" name="description" placeholder="insert the activity description ..."><br>
+              
+      <button class="btn btn-outline-success" type="submit">
+        Registra
+      </button>
+
+      <p class="help-block">Insert the activity informations</p>
+    </form>
+  </div>
+</div>
+
+{{template "footer"}}
